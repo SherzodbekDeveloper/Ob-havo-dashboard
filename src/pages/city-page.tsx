@@ -10,7 +10,6 @@ import HourlyTemperature from "../components/hourly-temperature"
 import { WeatherDetails } from "../components/weather-details"
 import WeatherForecast from "../components/weather-forecast"
 import { FavoriteButton } from "../components/favorite-button"
-import Header from "../components/header"
 
 // Ўзак шахарнинг обо-хаво деталлярини кўрсатиш
 export default function CityPage() {
