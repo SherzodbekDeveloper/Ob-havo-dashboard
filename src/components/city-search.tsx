@@ -45,12 +45,11 @@ export default function CitySearch() {
     <>
       <Button
         variant="outline"
-        className="relative justify-start text-sm text-muted-foreground transition-smooth hover:bg-secondary sm:pr-12 md:w-48 lg:w-64 bg-transparent"
+        className="relative justify-start text-sm sm:text-muted-foreground transition-smooth hover:bg-secondary sm:pr-12 md:w-48 lg:w-64 bg-transparent"
         onClick={() => setOpen(true)}
       >
-        <Search className="mr-2 h-4 w-4" />
+        <Search className="sm:mr-2 sm:h-4 sm:w-4 h-6 w-6 " />
         <span className="hidden sm:inline">Shaharlarni qidirish...</span>
-        <span className="sm:hidden">Qidirish...</span>
       </Button>
 
       <CommandDialog open={open} onOpenChange={setOpen}>
