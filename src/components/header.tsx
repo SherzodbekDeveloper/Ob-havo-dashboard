@@ -1,30 +1,27 @@
-import { Link } from 'react-router-dom'
-import { useTheme } from '../context/theme-provider'
-import { Moon, Sun } from 'lucide-react'
+"use client"
 
+import CitySearch from "./city-search"
+import { Link } from 'react-router-dom'
+import AuthDrawer from './auth-drawer'
 
 const Header = () => {
-	const { theme, setTheme } = useTheme()
-	const isDark = theme === "dark"
 
-	return (
-		<header className='sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur py-4 supports-[backdrop-filter]:bg-background/60:'>
-			<div className='flex container mx-auto justify-between px-4'>
-				<Link to={"/"}>
-					<h1 className='text-foreground'>Ob-havo</h1>
-				</Link>
-				<div>
-					<div onClick={() => setTheme(isDark ? "light" : "dark")}
-						className={`flex items-center cursor-pointer transition-transform duration-500
-							${isDark ? "rotate-180": "rotate-0"}
-							`}
-						>
-						{isDark ? <Sun className='h-6 w-6 text-yellow-500 rotate-0 transition-all'/> : <Moon className='h-6 w-6 text-blue-500 rotate-0 transition-all'/>}
-					</div>
-				</div>
-			</div>
-		</header>
-	)
+  return (
+    <header className="sticky top-0 z-50 w-full border-b border-border/50 bg-primary text-primary-foreground shadow-sm backdrop-blur supports-backdrop-filter:bg-primary/95">
+      <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
+        <Link to="/" className="text-2xl font-bold transition-smooth hover:opacity-80">
+          <span className="bg-white bg-clip-text text-transparent">Ob-havo</span>
+        </Link>
+
+        <div className='flex items-center gap-2'>
+        <div className="flex items-center gap-2 sm:gap-4">
+          <CitySearch />
+        </div>
+          <AuthDrawer/>
+        </div>
+      </div>
+    </header>
+  )
 }
 
 export default Header

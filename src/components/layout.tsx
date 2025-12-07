@@ -1,5 +1,6 @@
 import { type PropsWithChildren } from 'react'
 import Header from './header'
+import Footer from './footer'
 
 const Layout = ({ children }: PropsWithChildren) => {
 	return (
@@ -8,7 +9,7 @@ const Layout = ({ children }: PropsWithChildren) => {
 			<main className='min-h-screen container mx-auto px-4 py-8'>
 				{children}
 			</main>
-			footer
+			<Footer/>
 		</div>
 	)
 }
